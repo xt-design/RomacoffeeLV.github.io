@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/mystyle.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+               
+    </head>
+    
+     <!-- HEADER -->
+    
+    
+    <header class="roma-header">
+
+  <!-- ROW 1: Logo centered -->
+  <div class="logo-row">
+             
+      <a href="index.html"><img src="images/LOGO1.png" alt="logo" width="100px" height="82px"></a>
+        </div>  
+             
+      <!-- ROW 2: Three-column row -->
+  <div class="bottom-row">
+    
+    <div class="left-text">HUALAPAI</div>
+
+    <div class="center-text">LAS VEGAS</div>       
+       <div class="social-icons">
+        
+          <a href="#"><img src="images/social1.png"alt="email"></a>
+            <a href="https://www.instagram.com/romacoffeelv/?hl=en"><img src="images/social2.png" alt="ins"></a>
+            <a href="https://www.facebook.com/romacoffeelv/"><img src="images/social3.png" alt="Facebook"></a>
+               
+            </div>
+        
+        
+            
+       
+         </div>
+
+         <!-- Navigation -->
+        
+            <nav class="nav-bar">
+                <div class="line"></div>
+    <ul>
+        
+                <li><a class="active" href="index.html">HOME</a></li>
+                   <li><a class="active" href="about.html">ABOUT</a></li>
+                   <li> <a class="active" href="menu.html">MENU</a></li>
+                    <li><a class="active" href="preorder.html">PRE-ORDER</a></li>
+                    <li><a class="active" href="faq.html">FAQ</a></li>
+                 <li><a class="active" href="contact.html">CONTACT</a></li>
+                
+                
+            </ul>  
+                <div class="line"></div>
+        </nav>
+             
+
+    </header>
+        
+        
+        
+            <body>
+        
+<!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+        
+<!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1">
+<div class="ws_images"><ul>
+		<li><img src="data1/images/img1.jpg" alt="" title="" id="wows1_0"/></li>
+		<li><a href="http://wowslider.net"><img src="data1/images/romacoffee_slider_2.jpg" alt="slider html" title="" id="wows1_1"/></a></li>
+		<li><img src="data1/images/o_1.jpg" alt="" title="" id="wows1_2"/></li>
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title=""><span><img src="data1/tooltips/img1.jpg" alt=""/>1</span></a>
+		<a href="#" title=""><span><img src="data1/tooltips/romacoffee_slider_2.jpg" alt=""/>2</span></a>
+		<a href="#" title=""><span><img src="data1/tooltips/o_1.jpg" alt=""/>3</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery slider</a> by WOWSlider.com v9.0m</div>
+<div class="ws_shadow"></div>
+</div>	
+<script type="text/javascript" src="engine1/wowslider.js"></script>
+<script type="text/javascript" src="engine1/script.js"></script>
+<!-- End WOWSlider.com BODY section -->
+        
+        
+<section class="welcome-section">
+
+  <h2>Welcome to Roma Coffee!</h2>
+
+  <p>
+    An Italian inspired coffee shop. Serving hand-made Lavazza coffees, teas, breakfast &amp; lunch 
+    with an italian flair and passion for food and comfort. Our space is inviting, bright, and open 
+    all day for locals, visitors, and the community. Stop in and say hello! The Roma Coffee Family.
+  </p>
+
+  <hr>
+
+</section>
+        
+<!-- MENU SECTION -->
+                
+<script>
+$(document).ready(function() {
+
+  $(".tab-link").click(function() {
+
+    // remove old active tabs
+    $(".tab-link").removeClass("active");
+    $(".menu-panel").removeClass("active").hide();
+
+    // activate clicked tab
+    $(this).addClass("active");
+
+    // show correct menu
+    let panel = $(this).data("target");
+    $(panel).fadeIn(200).addClass("active");
+  });
+
+});
+</script>
+                
+<section class="menu-tabs">
+
+  <h2>October Menus</h2>
+  <p class="subtitle">Click on the tabs below to view the menu</p>
+
+  <!-- TAB BUTTONS -->
+  <div class="menu-nav">
+    <span class="tab-link active" data-target="#coffee">COFFEE</span>
+    <span class="tab-link" data-target="#breakfast">BREAKFAST</span>
+    <span class="tab-link" data-target="#lunch">LUNCH</span>
+  </div>
+
+  <!-- COFFEE MENU -->
+  <div id="coffee" class="menu-panel active">
+    <h2 class="sub-title">Classico</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Espresso</span><span>$3.45</span></li>
+                <li><span>Espresso Macchiato</span><span>$6</span></li>
+                <li><span>Americano</span><span>$3.50</span></li>
+                <li><span>Lavazza House Drip</span><span>$3.75</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Latte</span><span>$6.55</span></li>
+                <li><span>Cappuccino</span><span>$6.55</span></li>
+                <li><span>Nutella Hot Chocolate</span><span>$5</span></li>
+                <li><span>Chai Latte</span><span>$6.75</span></li>
+            </ul>
+        </div>
+
+        <h2 class="sub-title">Specials</h2>
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Honey Latte</span><span>$6</span></li>
+                <li><span>Lavender White Mocha</span><span>$6</span></li>
+                <li><span>Irish Cream Latte</span><span>$7.15</span></li>
+                <li><span>Mocha Coconut</span><span>$6.75</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>London Fog Tea</span><span>$6.75</span></li>
+                <li><span>Rose Cappuccino</span><span>$6.75</span></li>
+                <li><span>Matcha</span><span>$6.45</span></li>
+                <li><span>Cold Brew</span><span>$7.45</span></li>
+            </ul>
+        </div>
+      </div>
+      
+    
+   
+    
+  <!-- BREAKFAST MENU -->
+  <div id="breakfast" class="menu-panel">
+<h2 class="sub-title">Croissants</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Plain Croissant</span><span>$3.45</span></li>
+                <li><span>Chocolate Croissant</span><span>$6</span></li>
+                <li><span>Ham & Cheese</span><span>$3.50</span></li>
+                 
+            </ul>
+            <ul class="menu-list">
+                <li><span>Egg & Cheese</span><span>$3.50</span></li>
+                <li><span>Egg , Bacon & Cheese</span><span>$6.55</span></li>
+                <li><span>Egg , Sausage & Cheese</span><span>$6.55</span></li>
+                
+            </ul>
+        </div>
+
+        <h2 class="sub-title">Bagel Sandwiches</h2>
+        <div class="menu-row">
+            <ul class="menu-list">
+                 <li><span>Bagel</span><span>$6</span></li>
+                <li><span>Ham & Cheese</span><span>$6</span></li>
+             
+            
+            </ul>
+            <ul class="menu-list">
+              <li><span>Egg, Avocado, Spinach & Pesto</span><span>$6</span></li>
+               <li><span>Egg & Cheese</span><span>$6</span></li>  
+            </ul>
+        </div>
+    
+      <h2 class="sub-title">Toast</h2>
+        <div class="menu-row">
+            <ul class="menu-list">
+                 <li><span>Avocado/Smoked Salmon Toast</span><span>$6</span></li>
+                <li><span>Strawberry Ricotta Avocado Toast</span><span>$6</span></li>
+                 <li><span>Lox & Cream Cheese Toas</span><span>$6</span></li>
+               <li><span>Simply Avocado Toast</span><span>$6</span></li>
+             
+            </ul>
+            <ul class="menu-list">
+             
+                   <li><span>Avocado Garden Toast</span><span>$6</span></li>
+                    <li><span>“Roma” Avocado Toast</span><span>$6</span></li>
+                    <li><span>Caprese Toast</span><span>$6</span></li>
+            </ul>
+        </div>
+    
+      
+  </div>
+
+    
+    
+  <!-- LUNCH MENU -->
+  <div id="lunch" class="menu-panel">
+  
+             <h2 class="sub-title">Panini</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Turkey</span><span>$20.75</span></li>
+                <li><span>Ham & Cheese</span><span>$19.35</span></li>
+                <li><span>Roma</span><span>$21.40</span></li>
+                <li><span>Veggie</span><span>$17.95</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Italian</span><span>$21.40</span></li>
+                <li><span>Pesto Chicken</span><span>$20.75</span></li>
+                <li><span>Smoke Lox</span><span>$23.50</span></li>
+                <li><span>BBQ Chicken</span><span>$21.40</span></li>
+            </ul>
+        </div>
+
+             <h2 class="sub-title">Salad</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>House Salad</span><span>$20.75</span></li>
+                <li><span>Caeser Salad</span><span>$19.35</span></li>
+                <li><span>Spinach Salad</span><span>$21.40</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Strawberry Prosciutto</span><span>$20.75</span></li>
+                <li><span>Caprese Salad</span><span>$19.35</span></li>
+                <li><span>Keto Salad</span><span>$17.95</span></li>
+            </ul>
+        </div>
+
+             <h2 class="sub-title">Pasta</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Lasagna Bolognese</span><span>$17.95</span></li>
+                
+            </ul>
+            <ul class="menu-list">
+                <li><span>Cheese Ravioli</span><span>$17.95</span></li>
+             
+            </ul>
+        </div>
+
+             <h2 class="sub-title">Flat Bread</h2>
+
+        <div class="menu-row">
+            <ul class="menu-list">
+                <li><span>Margherita</span><span>$15.20</span></li>
+                <li><span>BBQ Chicken Ranch</span><span>$17.25</span></li>
+                <li><span>Antipasto</span><span>$19.35</span></li>
+                    <li><span>Chicken Pesto</span><span>$17.25</span></li>
+            </ul>
+            <ul class="menu-list">
+                <li><span>Veggie Lover</span><span>$20.75</span></li>
+                <li><span>Carnivore</span><span>$20.75</span></li>
+                <li><span>Lox</span><span>$21.40</span></li>
+                <li><span>Strawberry Prosciutto</span><span>$18.64</span></li>
+            </ul>
+        </div>
+      </div>
+      
+      
+     
+    
+      <!-- hover image zoom in-->
+<div class="card-grid">
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-image">
+        <a href="preorder.html"><img src="images/zoomin1.jpg" alt="Coffee Pre-order"></a>
+    </div>
+    <p class="card-label">CAFFEE PRE-ORDER</p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-image">
+        <a href="preorder.html"><img src="images/zoomin2.jpeg" alt="Breakfast Pre-order"></a>
+    </div>
+    <p class="card-label">BREAKFAST PRE-ORDER</p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-image">
+        <a href="preorder.html"><img src="images/zoomin3.jpeg" alt="Lunch Pre-order"></a>
+    </div>
+    <p class="card-label">LUNCH PRE-ORDER</p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-image">
+      <a href="preorder.html"><img src="images/zoomin4.png" alt="FAQ"></a>
+    </div>
+    <p class="card-label">FAQ</p>
+  </div>
+</div>
+
+
+    
+
+</section>
+
+ <!-- SUBSCRIBE SECTION -->
+<section class="subscribe-section">
+  <h2>Subscribe</h2>
+  <p class="subscribe-desc">
+    Sign up with your email address to receive weekly news updates and priority ordering on Holiday Specials!
+  </p>
+
+  <form class="subscribe-form">
+    <input type="email" placeholder="Email Address" required />
+    <button type="submit">SIGN UP</button>
+  </form>
+
+  <p class="privacy-note">
+    We respect your privacy. We never spam. Opt out at any time.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-line"></div>
+
+  <div class="footer-logos">
+    <img src="images/LOGO1.png" alt="ROMA Coffee Logo" />
+    <span class="footer-divider"></span>
+    <img src="images/FAQ1.png" alt="Roma Restaurant Cafe Logo" />
+  </div>
+
+  <p class="copyright">
+    COPYRIGHT © 2025 ROMA COFFEE - All Rights Reserved.
+  </p>
+</footer>
+
+        
+        
+        
+    </body>
+    
+    
+    
+    
+    
+    
+</html>
+              
+              
+              
+      
+        
