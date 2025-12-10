@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="stylesheet" href="../css/mystyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -42,11 +42,8 @@
                
     </div>
         
-        
-        
-            
-       
-         </div>
+                  
+</div>
 
        
          <!-- Navigation -->
@@ -82,6 +79,7 @@
         
         
 <body>
+  
     
     <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -97,8 +95,114 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- TOP SPACING -->
 <div class="po-top-spacing"></div>
 
-<!-- PAGE TITLE -->
-<h2 class="po-title">Please Select a Pickup Time</h2>
+<!-- PAGE TITLE (Clickable) -->
+<h2 class="po-title" id="pickupTitle">Please Select a Pickup Time</h2>
+    
+      <script>
+const pickupTitle = document.getElementById("pickupTitle");
+const modal = document.getElementById("pickupModal");
+const closeBtn = document.querySelector(".close-modal");
+const dateContainer = document.getElementById("dateOptions");
+const timeContainer = document.getElementById("timeOptions");
+
+// Show modal
+pickupTitle.onclick = () => {
+  modal.style.display = "block";
+};
+
+// Close modal
+closeBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+// Generate next 3 dates
+const dates = [];
+for (let i = 0; i < 3; i++) {
+  const d = new Date();
+  d.setDate(d.getDate() + i);
+  dates.push(d);
+}
+
+dates.forEach((d, index) => {
+  const btn = document.createElement("button");
+  btn.textContent = d.toDateString().slice(0,10);
+  btn.onclick = () => {
+    document.querySelectorAll('#dateOptions button')
+      .forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+  };
+  dateContainer.appendChild(btn);
+});
+
+// Generate time slots 4:00 PM – 8:00 PM (30-min intervals)
+function generateTimes() {
+  let hour = 16; 
+  let minute = 0;
+
+  while (hour < 20 || (hour === 20 && minute === 0)) {
+    const time = new Date();
+    time.setHours(hour, minute);
+
+    const btn = document.createElement("button");
+    btn.textContent = time.toLocaleTimeString([], {hour: 'numeric', minute: '2-digit'});
+    btn.onclick = () => {
+      document.querySelectorAll('#timeOptions button')
+        .forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    };
+
+    timeContainer.appendChild(btn);
+
+    minute += 30;
+    if (minute === 60) {
+      minute = 0;
+      hour++;
+    }
+  }
+}
+generateTimes();
+
+// Confirm click
+document.getElementById("confirmPickup").onclick = () => {
+  const selectedDate = document.querySelector('#dateOptions .active');
+  const selectedTime = document.querySelector('#timeOptions .active');
+
+  if (!selectedDate || !selectedTime) {
+    alert("Please select both date and time.");
+    return;
+  }
+
+  pickupTitle.textContent = 
+    selectedDate.textContent + " at " + selectedTime.textContent;
+
+  modal.style.display = "none";
+};
+</script>
+
+    
+    
+
+<!-- Pickup Modal -->
+<div id="pickupModal" class="pickup-modal">
+  <div class="pickup-modal-content">
+    <span class="close-modal">&times;</span>
+
+    <h3>Select Pickup Date</h3>
+    <div id="dateOptions" class="option-grid"></div>
+
+    <h3>Select Time (4:00 PM – 8:00 PM)</h3>
+    <div id="timeOptions" class="option-grid"></div>
+
+    <button id="confirmPickup">Confirm Pickup Time</button>
+  </div>
+</div>
+
 
 <!-- --------- CATEGORY TABS --------- -->
 <div class="po-tabs">
@@ -541,22 +645,13 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="po-card-right">
         <img src="images/preorder/breakfast/Ham%20&%20Cheese.jpg" alt="Ham & Cheese">
       </div>
-    </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    </div>   
       
   </div>
 </div>
 
+    
+    
 <!-- --------- LUNCH SECTION --------- -->
 <div id="lunch" class="po-section">
   <div class="po-grid">
@@ -788,6 +883,14 @@ document.addEventListener("DOMContentLoaded", function () {
       
   </div>
 </div>
+    
+    <!-- CHECKOUT BAR -->
+<div class="checkout-bar">
+  <button id="checkoutBtn" disabled>
+    Checkout (<span id="itemCount">0</span>)
+  </button>
+</div>
+
 
 
 <script>
@@ -806,7 +909,27 @@ tabs.forEach(tab => {
 });
 </script>
     
-    <script>
+  <script>
+const checkoutBtn = document.getElementById("checkoutBtn");
+const itemCountSpan = document.getElementById("itemCount");
+
+function updateCheckout() {
+  let total = 0;
+  document.querySelectorAll(".qty-number").forEach(num => {
+    total += parseInt(num.textContent);
+  });
+
+  itemCountSpan.textContent = total;
+
+  if (total > 0) {
+    checkoutBtn.disabled = false;
+    checkoutBtn.classList.add("enabled");
+  } else {
+    checkoutBtn.disabled = true;
+    checkoutBtn.classList.remove("enabled");
+  }
+}
+
 document.querySelectorAll(".po-card").forEach(card => {
   const plusBtn = card.querySelector(".plus");
   const minusBtn = card.querySelector(".minus");
@@ -814,18 +937,24 @@ document.querySelectorAll(".po-card").forEach(card => {
 
   plusBtn.addEventListener("click", () => {
     number.textContent = parseInt(number.textContent) + 1;
+    updateCheckout();
   });
 
   minusBtn.addEventListener("click", () => {
-    const current = parseInt(number.textContent);
+    let current = parseInt(number.textContent);
     if (current > 0) {
       number.textContent = current - 1;
+      updateCheckout();
     }
   });
 });
+
+/* Optional: click checkout */
+checkoutBtn.addEventListener("click", () => {
+  alert("Checkout clicked! You can connect this to Stripe / PayPal later.");
+});
 </script>
 
-        
     
     <!-- FOOTER -->
 <footer class="footer">
