@@ -1,5 +1,11 @@
 /* My Custom CSS */
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 /* Row 1 logo centered */
 .logo-row {
@@ -63,17 +69,21 @@
 
 .nav-bar a {
   text-decoration: none;
-  color: black;
+  color: red;
+    font-weight: bold;
   font-size: 15px;
 }
 
 .nav-bar a.active {
   color: red;
   font-weight: bold;
+    text-decoration: underline;
 }
 
+
+
 /* --- Responsive --- */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   .header-top {
     flex-direction: column;
     gap: 10px;
@@ -90,6 +100,10 @@
     gap: 18px;
   }
 }
+
+
+
+
 
 /* Welcome */
 
@@ -676,7 +690,7 @@ footer {
     color: #555;
 }
 
-/* about  */
+/* About Section */
 
 .site-info,.site-tag-line {
     font-family: Varela Round,arial,sans-serif;
@@ -707,19 +721,19 @@ footer {
   padding: 0 20px;
   font-family: "Montserrat", sans-serif;
   color: #333;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .about-block {
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .about-image {
-  width: 40%;
-  border-radius: 8px;
+  width: 60%;
+  border-radius: 0px;
   object-fit: cover;
 }
 
@@ -728,8 +742,8 @@ footer {
 }
 
 .about-section {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 790px;
+  margin: 20px auto;
 }
 
 .image-text {
@@ -741,7 +755,7 @@ footer {
 
 /* Image styles */
 .image-text img {
-  width: 40%;
+  width: 0%;
   object-fit: cover;      /* ensures image fills its column without distortion */
   border-radius: 0;
 }
@@ -756,17 +770,31 @@ footer {
   justify-content: center; /* vertically center text */
 }
 
+.main-content h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 40px;
+}
+
+
+.image-section {
+  max-width: 790px;
+  margin: 30px auto;
+}
+
+
 
 .caption {
   font-size: 0.8rem;
   color: #666;
-  text-align: left;
+  text-align: center;
   margin-top: 5px;
 }
 
 
+
 .sister-property img {
-  width: 35%;
+  width: 25%;
   max-width: 250px;
   border-radius: 0;
 }
@@ -785,6 +813,12 @@ footer {
     margin: 0 10px;
     float: right;
 }
+
+
+/*about Section End */
+
+
+
 
 /*Preorder Section*/
 
@@ -901,4 +935,104 @@ footer {
   }
 }
 
+/* ===== MOBILE RESPONSIVE FIXES WITHOUT CHANGING DESKTOP ===== */
+@media (max-width: 768px) {
+
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-row {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .nav-bar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .welcome-section {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .menu-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;   /* 1 card per row only on mobile */
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-label {
+    width: 100%;
+  }
+
+  .footer-line {
+    width: 90%;
+  }
+
+  .footer-logos {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* ===== Mobile Fixes ===== */
+@media (max-width: 768px) {
+
+  /* Stack sections vertically */
+  .about-block,
+  .image-text,
+  .menu-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Fix overflowing images */
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Remove forced text width */
+  .about-block p {
+    width: 100%;
+  }
+
+  /* Remove huge desktop spacing */
+  .about-block {
+    gap: 20px;
+  }
+
+  /* Stop floated images from breaking layout */
+  img {
+    float: none !important;
+  }
+
+  /* Center captions cleanly */
+  figure {
+    max-width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  /* Navigation stack */
+  .nav-bar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
