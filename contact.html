@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="stylesheet" href="../css/mystyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,30 +34,41 @@
     <div class="left-text">HUALAPAI</div>
 
     <div class="center-text">LAS VEGAS</div>       
-       <div class="social-icons">
-        
-          <a href="#"><img src="images/social1.png"alt="email"></a>
-         <a href="https://www.instagram.com/romacoffeelv/?hl=en"><img src="images/social2.png" alt="ins"></a>
-            <a href="https://www.facebook.com/romacoffeelv/"><img src="images/social3.png" alt="Facebook"></a>
+    
+   <div class="social-icons">  
+          <a href="mailto:romacoffeelv1@gmail.com"><img src="images/social1.png"alt="email"></a>
+            <a href="https://www.instagram.com/romacoffeelv/?hl=en" target="_blank" rel="noopener noreferrer"><img src="images/social2.png" alt="ins"></a>
+            <a href="https://www.facebook.com/romacoffeelv/" target="_blank" rel="noopener noreferrer"><img src="images/social3.png" alt="Facebook"></a>
                
-            </div>
+    </div>
+        
+        
         
         
             
        
          </div>
 
-         <!-- Navigation -->
+       <!-- Navigation -->
         
-            <nav class="nav-bar">
+        <!-- Hamburger Button -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="nav-bar" id="navMenu">
+
+        
                 <div class="line"></div>
     <ul>
         
-                <li><a class="active" href="index.html">HOME</a></li>
-                   <li><a class="active" href="about.html">ABOUT</a></li>
-                   <li> <a class="active" href="menu.html">MENU</a></li>
-                    <li><a class="active" href="preorder.html">PRE-ORDER</a></li>
-                    <li><a class="active" href="faq.html">FAQ</a></li>
+                <li><a href="index.html">HOME</a></li>
+                   <li><a href="about.html">ABOUT</a></li>
+                   <li> <a href="menu.html">MENU</a></li>
+                    <li><a href="preorder.html">PRE-ORDER</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                  <li><a class="active" href="contact.html">CONTACT</a></li>
                 
                 
@@ -67,15 +78,29 @@
              
 
     </header>
-    
+        
     
     
     <body>
+        
+        
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+  });
+});
+</script>
+        
+        
    <!-- FORM SECTION -->
         
         <section class="contact-info text-center">
     <h5>For general questions, please email:</h5>
-    <h5><strong>romacoffeelv1@gmail.com</strong></h5>
+    <h5><strong><a href="mailto:romacoffeelv1@gmail.com">romacoffeelv1@gmail.com</a></strong></h5>
     <h5>or fill out the form below.</h5>
 </section>
 
@@ -114,6 +139,15 @@
 <hr class="divider">
 
 
+<section class="map-section text-center py-5">
+ 
+      
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.823153341863!2d-115.31675562335997!3d36.12216597244821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8bf08e5f1b3fb%3A0x9fb3c018ebe2fd08!2sRoma%20Cafe%3A%20Authentic%20Italian%20Food%20%26%20Coffee!5e0!3m2!1sen!2sus!4v1761695360039!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   
+</section>
+        
+              
+     <hr class="divider">
         
          <!-- SUBSCRIBE SECTION -->
 <section class="subscribe-section">
@@ -131,23 +165,13 @@
     We respect your privacy. We never spam. Opt out at any time.
   </p>
 </section>
-        
-        
-     <hr class="divider">
-
-<section class="map-section text-center py-5">
- 
-      
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.823153341863!2d-115.31675562335997!3d36.12216597244821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8bf08e5f1b3fb%3A0x9fb3c018ebe2fd08!2sRoma%20Cafe%3A%20Authentic%20Italian%20Food%20%26%20Coffee!5e0!3m2!1sen!2sus!4v1761695360039!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-   
-</section>
 
 <section class="info-section">
   <div class="info-box">
     <div class="info-column">
       <h3>Contact</h3>
       <p>702-331-7071</p>
-      <p>romacoffeelv1@gmail.com</p>
+      <p><a href="mailto:romacoffeelv1@gmail.com">romacoffeelv1@gmail.com</a></p>
 
       <h3>Daily Hours</h3>
       <p>6:30 am–6:00 pm</p>

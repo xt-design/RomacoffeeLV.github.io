@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, intial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/mystyle.css">
+        <link rel="stylesheet" href="../css/mystyle.css">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
                
+        
+     
+
+        
     </head>
     
      <!-- HEADER -->
@@ -30,13 +35,13 @@
     <div class="left-text">HUALAPAI</div>
 
     <div class="center-text">LAS VEGAS</div>       
-       <div class="social-icons">
-        
-          <a href="#"><img src="images/social1.png"alt="email"></a>
-            <a href="https://www.instagram.com/romacoffeelv/?hl=en"><img src="images/social2.png" alt="ins"></a>
-            <a href="https://www.facebook.com/romacoffeelv/"><img src="images/social3.png" alt="Facebook"></a>
+       
+      <div class="social-icons">  
+          <a href="mailto:romacoffeelv1@gmail.com"><img src="images/social1.png"alt="email"></a>
+            <a href="https://www.instagram.com/romacoffeelv/?hl=en" target="_blank" rel="noopener noreferrer"><img src="images/social2.png" alt="ins"></a>
+            <a href="https://www.facebook.com/romacoffeelv/" target="_blank" rel="noopener noreferrer"><img src="images/social3.png" alt="Facebook"></a>
                
-            </div>
+    </div>
         
         
             
@@ -45,16 +50,25 @@
 
          <!-- Navigation -->
         
-            <nav class="nav-bar">
+        <!-- Hamburger Button -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="nav-bar" id="navMenu">
+
+        
                 <div class="line"></div>
     <ul>
         
                 <li><a class="active" href="index.html">HOME</a></li>
-                   <li><a class="active" href="about.html">ABOUT</a></li>
-                   <li> <a class="active" href="menu.html">MENU</a></li>
-                    <li><a class="active" href="preorder.html">PRE-ORDER</a></li>
-                    <li><a class="active" href="faq.html">FAQ</a></li>
-                 <li><a class="active" href="contact.html">CONTACT</a></li>
+                   <li><a href="about.html">ABOUT</a></li>
+                   <li> <a href="menu.html">MENU</a></li>
+                    <li><a href="preorder.html">PRE-ORDER</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                 <li><a href="contact.html">CONTACT</a></li>
                 
                 
             </ul>  
@@ -67,7 +81,20 @@
         
         
             <body>
-        
+   
+                <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+  });
+});
+</script>
+
+                
+                
 <!-- Start WOWSlider.com HEAD section -->
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
 <script type="text/javascript" src="engine1/jquery.js"></script>
@@ -77,21 +104,20 @@
 <!-- Start WOWSlider.com BODY section -->
 <div id="wowslider-container1">
 <div class="ws_images"><ul>
-		<li><img src="data1/images/img1.jpg" alt="" title="" id="wows1_0"/></li>
-		<li><a href="http://wowslider.net"><img src="data1/images/romacoffee_slider_2.jpg" alt="slider html" title="" id="wows1_1"/></a></li>
-		<li><img src="data1/images/o_1.jpg" alt="" title="" id="wows1_2"/></li>
+		<li><a href="preorder.html" target="_blank"><img src="data1/images/img1.jpg" alt="Start an Order" title="Start an Order" id="wows1_0"/></a></li>
+		<li><a href="menu.html" target="_blank"><img src="data1/images/img2.jpg" alt="Our Menu" title="Our Menu" id="wows1_1"/></a></li>
+		<li><a href="contact.html" target="_blank"><img src="data1/images/o_1.jpg" alt="Subscribe" title="Subscribe" id="wows1_2"/></a></li>
 	</ul></div>
 	<div class="ws_bullets"><div>
-		<a href="#" title=""><span><img src="data1/tooltips/img1.jpg" alt=""/>1</span></a>
-		<a href="#" title=""><span><img src="data1/tooltips/romacoffee_slider_2.jpg" alt=""/>2</span></a>
-		<a href="#" title=""><span><img src="data1/tooltips/o_1.jpg" alt=""/>3</span></a>
-	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery slider</a> by WOWSlider.com v9.0m</div>
+		<a href="#" title="Start an Order"><span><img src="data1/tooltips/img1.jpg" alt="Start an Order"/>1</span></a>
+		<a href="#" title="Our Menu"><span><img src="data1/tooltips/img2.jpg" alt="Our Menu"/>2</span></a>
+		<a href="#" title="Subscribe"><span><img src="data1/tooltips/o_1.jpg" alt="Subscribe"/>3</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery image carousel</a> by WOWSlider.com v9.0m</div>
 <div class="ws_shadow"></div>
 </div>	
 <script type="text/javascript" src="engine1/wowslider.js"></script>
 <script type="text/javascript" src="engine1/script.js"></script>
 <!-- End WOWSlider.com BODY section -->
-        
         
 <section class="welcome-section">
 
@@ -333,7 +359,7 @@ $(document).ready(function() {
   <!-- Card 4 -->
   <div class="card">
     <div class="card-image">
-      <a href="preorder.html"><img src="images/zoomin4.png" alt="FAQ"></a>
+      <a href="faq.html"><img src="images/zoomin4.png" alt="FAQ"></a>
     </div>
     <p class="card-label">FAQ</p>
   </div>

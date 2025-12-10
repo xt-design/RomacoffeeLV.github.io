@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lan="en">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, intial-scale=1">
@@ -50,9 +50,18 @@
          </div>
         
         
-         <!-- Navigation -->
+           <!-- Navigation -->
         
-            <nav class="nav-bar">
+        <!-- Hamburger Button -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<nav class="nav-bar" id="navMenu">
+
+        
                 <div class="line"></div>
     <ul>
         
@@ -70,10 +79,18 @@
              
 
     </header>
-    
     <body>
     
-        
+     <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", function () {
+    navMenu.classList.toggle("active");
+  });
+});
+</script>   
         
          <!-- MAIN CONTENT -->
   <main class="main-content">
