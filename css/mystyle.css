@@ -1102,3 +1102,96 @@ footer {
   }
 }
 
+/* Checkout bar */
+.checkout-bar {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+  z-index: 999;
+}
+
+#checkoutBtn {
+  width: 100%;
+  max-width: 500px;
+  background-color: #c94a48;
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#checkoutBtn.enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Clickable title */
+.po-title {
+  text-align: center;
+  cursor: pointer;
+  color: #c94a48;
+}
+
+/* Modal background */
+.pickup-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+
+}
+
+/* Modal box */
+.pickup-modal-content {
+  background: #fff;
+  max-width: 420px;
+  margin: 12% auto;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Close */
+.close-modal {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Grid buttons */
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 10px 0 20px;
+}
+
+.option-grid button {
+  padding: 10px;
+  border: 1px solid #c94a48;
+  background: white;
+  color: #c94a48;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.option-grid button.active {
+  background: #c94a48;
+  color: white;
+}
+
+#confirmPickup {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #c94a48;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
